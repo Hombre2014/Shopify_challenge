@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :City, style: "display: block" %>
+    <%= form.select :city_id, @cities.collect { |city| [city.name, city.id] }, { include_blank: true} %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
