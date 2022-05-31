@@ -4,6 +4,7 @@ class CitiesController < ApplicationController
   # GET /cities or /cities.json
   def index
     @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # GET /cities/1 or /cities/1.json
