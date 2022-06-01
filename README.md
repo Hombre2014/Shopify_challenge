@@ -1,4 +1,4 @@
-b# Inventories tracker
+# Inventories tracker
 
 >  Shopify Developer Intern Challenge
 
