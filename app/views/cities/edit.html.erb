@@ -1,4 +1,6 @@
-<h1>Editing city</h1>
+<%
+=begin%>
+ <h1>Editing city</h1>
 
 <%= render "form", city: @city %>
 
@@ -7,4 +9,6 @@
 <div>
   <%= link_to "Show this city", @city %> |
   <%= link_to "Back to cities", cities_path %>
-</div>
+</div> 
+<%
+=end%>

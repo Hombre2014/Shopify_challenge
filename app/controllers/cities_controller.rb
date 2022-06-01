@@ -17,8 +17,8 @@ class CitiesController < ApplicationController
   end
 
   # GET /cities/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /cities or /cities.json
   def create
@@ -36,27 +36,27 @@ class CitiesController < ApplicationController
   end
 
   # PATCH/PUT /cities/1 or /cities/1.json
-  def update
-    respond_to do |format|
-      if @city.update(city_params)
-        format.html { redirect_to city_url(@city), notice: "City was successfully updated." }
-        format.json { render :show, status: :ok, location: @city }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @city.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @city.update(city_params)
+  #       format.html { redirect_to city_url(@city), notice: "City was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @city }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @city.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /cities/1 or /cities/1.json
-  def destroy
-    @city.destroy
+  # def destroy
+  #   @city.destroy
 
-    respond_to do |format|
-      format.html { redirect_to cities_url, notice: "City was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to cities_url, notice: "City was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
