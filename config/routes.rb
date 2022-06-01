@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  resources :cities
-  resources :items
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :cities, only: [:index, :show, :new, :create]
+  resources :items, only: [:index, :show, :new, :create, :destroy, :update, :edit]
 
-  # Defines the root path route ("/")
   root "items#index"
 end

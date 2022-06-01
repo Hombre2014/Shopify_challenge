@@ -1,14 +1,38 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Items</h1>
-
-<div id="items">
-  <% @items.each do |item| %>
-    <%= render item %>
-    <p>
-      <%= link_to "Show this item", item %>
-    </p>
-  <% end %>
+<h1>Shopify Inventory tracking challenge</h1>
+<div class="container">
+  <div class="body">
+    <h2>Inventories</h2>
+    <div id="items">
+      <% @items.each do |item| %>
+        <%= render item %>
+        <div class="items">
+          <p>
+            <%= link_to "Show this item", item %>
+          </p>
+          <p>
+            <%= button_to "Destroy this item", item, method: :delete %>
+          </p>
+          <p>
+            <%= link_to "Edit this item", edit_item_path(item) %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+    <span class="new-item">
+      <%= link_to "New item", new_item_path %>
+    </span>
+  </div>
+  <div class="cities">
+    <h2>Locations</h2>
+    <div id="cities">
+      <% @cities.each do |city| %>
+        <%= render city %>
+      <% end %>
+    </div>
+    <span class="new-item">
+      <%= link_to "New city", new_city_path %>
+    </span>
+  </div>
 </div>
-
-<%= link_to "New item", new_item_path %>

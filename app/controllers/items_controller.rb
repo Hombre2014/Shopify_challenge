@@ -4,24 +4,34 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = Item.all
+    @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # GET /items/1 or /items/1.json
   def show
+    @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # GET /items/new
   def new
     @item = Item.new
+    @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # GET /items/1/edit
   def edit
+    @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # POST /items or /items.json
   def create
     @item = Item.new(item_params)
+    @cities = City.all
+    @city = City.find_by(id: params[:id])
 
     respond_to do |format|
       if @item.save
@@ -36,6 +46,7 @@ class ItemsController < ApplicationController
 
   # PATCH/PUT /items/1 or /items/1.json
   def update
+    @cities = City.all
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to item_url(@item), notice: "Item was successfully updated." }
@@ -65,6 +76,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :quantity)
+      params.require(:item).permit(:name, :quantity, :city_id)
     end
 end

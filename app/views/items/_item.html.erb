@@ -1,12 +1,18 @@
 <div id="<%= dom_id item %>">
-  <p>
-    <strong>Name:</strong>
-    <%= item.name %>
-  </p>
+  <div class="cont-item">
+    <p class="item-text">
+      <strong>Item:</strong>
+      <%= item.name %>
+    </p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= item.quantity %>
-  </p>
+    <p class="item-text">
+      <strong>Quantity:</strong>
+      <%= item.quantity %>
+    </p>
 
+    <p class="item-text">
+      <strong>Location:</strong>
+      <%= @cities[item.city_id - 1].name %>
+    </p>
+  </div>
 </div>

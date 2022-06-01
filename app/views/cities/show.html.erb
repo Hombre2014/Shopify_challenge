@@ -2,9 +2,7 @@
 
 <%= render @city %>
 
-<div>
-  <%= link_to "Edit this city", edit_city_path(@city) %> |
+<div class="show-item">
   <%= link_to "Back to cities", cities_path %>
-
-  <%= button_to "Destroy this city", @city, method: :delete %>
+  <%= link_to "Back to items", items_path %>
 </div>

@@ -4,6 +4,7 @@ class CitiesController < ApplicationController
   # GET /cities or /cities.json
   def index
     @cities = City.all
+    @city = City.find_by(id: params[:id])
   end
 
   # GET /cities/1 or /cities/1.json
@@ -13,10 +14,6 @@ class CitiesController < ApplicationController
   # GET /cities/new
   def new
     @city = City.new
-  end
-
-  # GET /cities/1/edit
-  def edit
   end
 
   # POST /cities or /cities.json
@@ -31,29 +28,6 @@ class CitiesController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @city.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /cities/1 or /cities/1.json
-  def update
-    respond_to do |format|
-      if @city.update(city_params)
-        format.html { redirect_to city_url(@city), notice: "City was successfully updated." }
-        format.json { render :show, status: :ok, location: @city }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @city.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /cities/1 or /cities/1.json
-  def destroy
-    @city.destroy
-
-    respond_to do |format|
-      format.html { redirect_to cities_url, notice: "City was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
