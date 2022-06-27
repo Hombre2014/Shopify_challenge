@@ -3,7 +3,6 @@ class CitiesController < ApplicationController
 
   def index
     @cities = City.all
-    @city = City.find_by(id: params[:id])
   end
 
   def show

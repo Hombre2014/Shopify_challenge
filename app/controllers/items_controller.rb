@@ -8,24 +8,20 @@ class ItemsController < ApplicationController
 
   def show
     @cities = City.all
-    @city = City.find_by(id: params[:id])
   end
 
   def new
     @item = Item.new
     @cities = City.all
-    @city = City.find_by(id: params[:id])
   end
 
   def edit
     @cities = City.all
-    @city = City.find_by(id: params[:id])
   end
 
   def create
     @item = Item.new(item_params)
     @cities = City.all
-    @city = City.find_by(id: params[:id])
 
     respond_to do |format|
       if @item.save
